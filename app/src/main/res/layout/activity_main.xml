@@ -1,0 +1,124 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:fitsSystemWindows="true"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            android:background="@color/true_black">
+
+            <TextView
+                android:id="@+id/txtTitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/average_sans"
+                android:gravity="center"
+                android:text="Fit Pulse"
+                android:textColor="@color/true_white"
+                android:textSize="34sp"
+                app:layout_collapseParallaxMultiplier="1.0"
+
+                />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/true_black"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/caixa_de_fundo"
+            android:backgroundTint="@color/true_gray"
+            android:layout_margin="20dp"
+            android:padding="16dp">
+
+
+            <EditText
+                android:id="@+id/edtPassos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Insira a quantidade de passos"
+                android:textColor="@color/true_white"
+                android:inputType="number" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupTpasso"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/true_white"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbCurto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/true_white"
+                    android:text="Curto (0,5m)" />
+
+                <RadioButton
+                    android:id="@+id/rbMedio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/true_white"
+                    android:text="Médio (0,7m)" />
+
+                <RadioButton
+                    android:id="@+id/rbLongo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/true_white"
+                    android:text="Longo (1m)" />
+            </RadioGroup>
+
+            <CheckBox
+                android:id="@+id/cbCorrer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Estava correndo? (Aumenta 10%)"
+                android:textColor="@color/true_white"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnCalcular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10px"
+                android:paddingRight="10px"
+                android:layout_gravity="center"
+                android:background="@drawable/meu_botao"
+                android:textColor="@color/true_white"
+                android:text="Calcular distância" />
+
+            <TextView
+                android:id="@+id/txtResultado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Distância percorrida: "
+                android:textSize="18sp"
+                android:textColor="@color/true_white"
+                android:layout_marginTop="20dp" />
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
